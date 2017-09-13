@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE generatorConfiguration  
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<classPathEntry
+		location="classes12-10.2.0.2.0.jar" />
+
+	<context id="DB2Tables" targetRuntime="MyBatis3">
+
+		<commentGenerator>
+			<property name="suppressAllComments" value="false" />
+		</commentGenerator>
+
+		<!-- JDBC 连接信息 -->
+		<jdbcConnection 
+			driverClass="oracle.jdbc.driver.OracleDriver"
+			connectionURL="jdbc:oracle:thin:@192.168.88.98:1521:trantest" 
+			userId="checkdb"
+			password="checkdb">
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="com.zkbc.core.dao.model"
+			targetProject="../java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="com.zkbc.core.dao.map"
+			targetProject="../java">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="ANNOTATEDMAPPER"
+			targetPackage="com.zkbc.core.dao.map" targetProject="../java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		
+ 		<table tableName="pay_order" domainObjectName="PayOrder" ><property name="useActualColumnNames" value="false" /></table>
+ 		
+	</context>
+</generatorConfiguration>
